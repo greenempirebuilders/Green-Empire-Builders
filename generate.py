@@ -639,7 +639,7 @@ def video_section():
     for v in VIDEOS:
         cards.append(f"""<figure class="video-card">
         <div class="video-frame">
-          <video preload="none" poster="{v['poster']}" playsinline data-src="{v['src']}" aria-label="{v['label']} video walkthrough"></video>
+          <video preload="metadata" poster="{v['poster']}" playsinline controls src="{v['src']}" aria-label="{v['label']} video walkthrough"></video>
           <button class="video-play" type="button" aria-label="Play {v['label']} video">
             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
           </button>
