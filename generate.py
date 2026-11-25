@@ -410,7 +410,7 @@ def booking_form(compact=False):
   <div class="booking-card-header">
     <h3>Get Your Free Design Preview</h3>
     {reviews_badge()}
-    <p>Free, no obligation — we call you back the same business day, 7am–5pm.</p>
+    <p>Free, no obligation — we call you back the same business day, 8am–6pm.</p>
   </div>
   <form action="{WEBHOOK}" method="POST" class="booking-form" data-phone="{PHONE}">
     <div class="form-group"><label for="c-name">Name *</label><input type="text" id="c-name" name="name" required placeholder="Your full name" /></div>
@@ -430,7 +430,7 @@ def booking_form(compact=False):
   <div class="booking-card-header">
     <h3>Request Your Free Design Preview</h3>
     {reviews_badge()}
-    <p>Free, no obligation — we call you back the same business day, 7am–5pm.</p>
+    <p>Free, no obligation — we call you back the same business day, 8am–6pm.</p>
   </div>
   <form action="{WEBHOOK}" method="POST" class="booking-form" data-phone="{PHONE}">
     <div class="form-row">
@@ -531,7 +531,7 @@ LOCAL_BIZ_SCHEMA = f"""<script type="application/ld+json">
     "telephone":"{PHONE}",
     "address":{{"@type":"PostalAddress","streetAddress":"{B['address']}","addressLocality":"{B['city']}","addressRegion":"{B['state']}","postalCode":"{B['zip']}","addressCountry":"US"}},
     "priceRange":"$$",
-    "openingHours":"Su-Fr 07:00-17:00",
+    "openingHours":"Su-Fr 08:00-18:00",
     "geo":{{"@type":"GeoCoordinates","latitude":40.7065,"longitude":-73.6212}},
     "areaServed":{json.dumps([{"@type":"City","name":a["name"]} for a in AREAS])}{_same_as_json},
     "aggregateRating": {_aggregate_rating},
@@ -1021,7 +1021,7 @@ def make_service_page(s):
 <section class="cta-banner">
   <div class="container">
     <h2>Get a free custom {s['ctaNoun']} design preview</h2>
-    <p>Free, no obligation. We call you back the same business day, 7am to 5pm.</p>
+    <p>Free, no obligation. We call you back the same business day, 8am to 6pm.</p>
     <div class="cta-actions">
       <a href="/request-service.html" class="btn btn-secondary btn-lg">Get My Free Design Preview</a>
       <a href="tel:{PHONE_RAW}" class="btn btn-outline-white btn-lg">Call {PHONE}</a>
@@ -1177,7 +1177,7 @@ def make_city_page(area):
 <section class="cta-banner">
   <div class="container">
     <h2>Need {B['industry']} in {city}, NY?</h2>
-    <p>We're nearby and ready. Get a free custom design preview — free, no obligation. We call you back the same business day, 7am to 5pm.</p>
+    <p>We're nearby and ready. Get a free custom design preview — free, no obligation. We call you back the same business day, 8am to 6pm.</p>
     <div class="cta-actions">
       <a href="/request-service.html" class="btn btn-secondary btn-lg">Get My Free Design Preview</a>
       <a href="tel:{PHONE_RAW}" class="btn btn-outline-white btn-lg">Call {PHONE}</a>
@@ -1440,7 +1440,7 @@ def make_request_service():
         <h2>Let's Talk About Your Project</h2>
         <p>Whether it is a single room remodel or a full home addition, we are here to help. Tell us about your project and we will provide a free, transparent estimate.</p>
         <div class="features-grid" style="margin-top:2rem">
-          <div class="feature-card">{ICON["phone_lg"]}<h3>Call or Text</h3><p><a href="tel:{PHONE_RAW}">{PHONE}</a><br/>Mon–Sat, 7am–6pm</p></div>
+          <div class="feature-card">{ICON["phone_lg"]}<h3>Call or Text</h3><p><a href="tel:{PHONE_RAW}">{PHONE}</a><br/>Sun–Fri, 8am–6pm</p></div>
           <div class="feature-card">{ICON["pin_lg"]}<h3>Our Location</h3><p>{ADDRESS}</p></div>
           <div class="feature-card">{ICON["timer_lg"]}<h3>Response Time</h3><p>Within 1 business hour</p></div>
         </div>
@@ -1659,7 +1659,7 @@ def make_blog_pages():
 <section class="cta-banner">
   <div class="container">
     <h2>Have a Project in Mind?</h2>
-    <p>Free, no obligation. We call you back the same business day, 7am to 5pm.</p>
+    <p>Free, no obligation. We call you back the same business day, 8am to 6pm.</p>
     <div class="cta-actions">
       <a href="/request-service.html" class="btn btn-secondary btn-lg">Get My Free Design Preview</a>
       <a href="tel:{PHONE_RAW}" class="btn btn-outline-white btn-lg">Call {PHONE}</a>
