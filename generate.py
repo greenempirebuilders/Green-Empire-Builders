@@ -531,7 +531,7 @@ LOCAL_BIZ_SCHEMA = f"""<script type="application/ld+json">
     "telephone":"{PHONE}",
     "address":{{"@type":"PostalAddress","streetAddress":"{B['address']}","addressLocality":"{B['city']}","addressRegion":"{B['state']}","postalCode":"{B['zip']}","addressCountry":"US"}},
     "priceRange":"$$",
-    "openingHours":"Mo-Sa 07:00-18:00",
+    "openingHours":"Su-Fr 08:00-18:00",
     "geo":{{"@type":"GeoCoordinates","latitude":40.7065,"longitude":-73.6212}},
     "areaServed":{json.dumps([{"@type":"City","name":a["name"]} for a in AREAS])}{_same_as_json},
     "aggregateRating": {_aggregate_rating},
@@ -1395,7 +1395,7 @@ def make_reviews():
   <div class="container">
     <div class="review-grid">{all_reviews}</div>
     <div class="cta-inline mt-4 text-center">
-      <p>Want to leave a review? <a href="https://g.page/r/GOOGLE_REVIEW_LINK/review" target="_blank" rel="noopener">Leave us a Google review →</a></p>
+      <p>Want to leave a review? <a href="https://g.page/r/CcaETB1mD7BLEAE/review" target="_blank" rel="noopener">Leave us a Google review →</a></p>
     </div>
   </div>
 </section>
@@ -1440,7 +1440,7 @@ def make_request_service():
         <h2>Let's Talk About Your Project</h2>
         <p>Whether it is a single room remodel or a full home addition, we are here to help. Tell us about your project and we will provide a free, transparent estimate.</p>
         <div class="features-grid" style="margin-top:2rem">
-          <div class="feature-card">{ICON["phone_lg"]}<h3>Call or Text</h3><p><a href="tel:{PHONE_RAW}">{PHONE}</a><br/>Mon–Sat, 7am–6pm</p></div>
+          <div class="feature-card">{ICON["phone_lg"]}<h3>Call or Text</h3><p><a href="tel:{PHONE_RAW}">{PHONE}</a><br/>Sun–Fri, 8am–6pm</p></div>
           <div class="feature-card">{ICON["pin_lg"]}<h3>Our Location</h3><p>{ADDRESS}</p></div>
           <div class="feature-card">{ICON["timer_lg"]}<h3>Response Time</h3><p>Within 1 business hour</p></div>
         </div>
