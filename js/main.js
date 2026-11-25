@@ -106,24 +106,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Video walkthroughs: click-to-play (no preload) ─────
-  // Videos carry no src until the visitor presses play, so
-  // no video bytes are downloaded on page load.
+  // ── Video walkthroughs ────────────────────────────────
+  // Videos ship with a real src, preload="metadata" and native
+  // controls, so they play even if this script never runs.
+  // The big overlay button is just a shortcut: it starts
+  // playback and then gets out of the way.
   document.querySelectorAll('.video-card').forEach(card => {
     const video = card.querySelector('video');
     const btn = card.querySelector('.video-play');
-    if (!video || !btn) return;
-    const loadAndPlay = () => {
-      if (!video.getAttribute('src')) {
-        video.setAttribute('src', video.dataset.src);
-        video.load();
-      }
-      video.controls = true;
-      btn.classList.add('hidden');
-      video.play().catch(() => { btn.classList.remove('hidden'); });
-    };
-    btn.addEventListener('click', loadAndPlay);
-    video.addEventListener('click', () => { if (!video.getAttribute('src')) loadAndPlay(); });
+    if (!video) return;
+    video.addEventListener('play', () => { if (btn) btn.classList.add('hidden'); });
+    if (btn) btn.addEventListener('click', () => { video.play().catch(() => {}); });
   });
 
   // ── Footer year ────────────────────────────────────────
