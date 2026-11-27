@@ -268,9 +268,6 @@ def footer():
           <a href="{B['facebook']}" target="_blank" rel="noopener" aria-label="Facebook">
             <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
           </a>
-          <a href="{B['instagram']}" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-          </a>
         </div>
       </div>
       <div class="footer-col">
@@ -301,7 +298,6 @@ def footer():
 <div class="social-side" aria-label="Follow us on social media">
   <span class="social-side-label">Follow Us</span>
   <a href="{B['facebook']}" target="_blank" rel="noopener" aria-label="Green Empire Builders on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-  <a href="{B['instagram']}" target="_blank" rel="noopener" aria-label="Green Empire Builders on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
 </div>
 <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 <script src="/js/main.js"></script>"""
@@ -500,7 +496,7 @@ def breadcrumbs(crumbs):
     return f'<nav class="breadcrumbs" aria-label="Breadcrumb"><div class="container"><ol class="breadcrumb-list">{"".join(items)}</ol></div></nav>', schema
 
 # Build sameAs array (only include non-empty social links)
-_same_as = [s for s in [B.get('facebook',''), B.get('instagram','')] if s]
+_same_as = [s for s in [B.get('facebook','')] if s]
 _same_as_json = f',"sameAs":{json.dumps(_same_as)}' if _same_as else ''
 
 # Build reviews array with datePublished
